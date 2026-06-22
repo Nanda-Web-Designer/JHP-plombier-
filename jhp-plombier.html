@@ -1,0 +1,1016 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>JHP Plombier — Artisan plombier Paris 5e · Dépannage & Rénovation</title>
+<meta name="description" content="JHP Plombier, artisan indépendant installé à Paris depuis 2014. Dépannage rapide, installation sanitaire, rénovation salle de bain. 06 31 45 52 03.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --ink:#1C1C1C;
+  --slate:#2C5F7A;
+  --slate-light:#EBF3F8;
+  --copper:#B07845;
+  --cream:#F7F6F4;
+  --warm:#EEE9E3;
+  --muted:#6B6560;
+  --border:#DDD8D2;
+  --white:#FFFFFF;
+}
+html{scroll-behavior:smooth}
+body{font-family:'Inter',sans-serif;background:var(--cream);color:var(--ink);overflow-x:hidden}
+
+/* ── BARRE PROGRESSION SCROLL ── */
+.scroll-bar{
+  position:fixed;top:0;left:0;z-index:999;
+  height:3px;width:0%;
+  background:linear-gradient(90deg,var(--slate),var(--copper));
+  transition:width 0.1s linear;
+  border-radius:0 2px 2px 0;
+}
+
+/* ── MOBILE CALL BAR ── */
+.call-bar{
+  display:none;position:fixed;bottom:0;left:0;right:0;z-index:300;
+  padding:0.7rem 1rem;background:var(--slate);
+  border-top:1px solid rgba(255,255,255,0.1);
+  gap:0.5rem;
+}
+.call-bar a{
+  flex:1;display:flex;align-items:center;justify-content:center;gap:0.5rem;
+  padding:0.8rem;border-radius:5px;text-decoration:none;font-weight:600;
+  font-size:0.92rem;transition:opacity 0.2s;
+}
+.call-bar-main{background:var(--copper);color:#fff}
+.call-bar-urgence{background:rgba(255,255,255,0.1);border:1px solid rgba(255,255,255,0.2);color:#fff}
+@media(max-width:768px){.call-bar{display:flex}body{padding-bottom:75px}}
+
+/* ── NAV ── */
+nav{
+  position:sticky;top:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:1rem 2.5rem;
+  background:rgba(247,246,244,0.97);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.nav-logo{display:flex;align-items:center;gap:12px;text-decoration:none}
+.nav-logo-mark{
+  width:40px;height:40px;border-radius:6px;
+  background:var(--slate);
+  display:flex;align-items:center;justify-content:center;
+  flex-shrink:0;
+}
+.nav-logo-mark svg{width:22px;height:22px}
+.nav-logo-text{display:flex;flex-direction:column;line-height:1.1}
+.nav-logo-name{font-family:'Cormorant Garamond',serif;font-size:1.05rem;font-weight:600;color:var(--ink);letter-spacing:0.01em}
+.nav-logo-sub{font-size:0.6rem;color:var(--muted);letter-spacing:0.12em;text-transform:uppercase}
+.nav-links{display:flex;gap:0;list-style:none}
+.nav-links a{text-decoration:none;color:var(--muted);font-size:0.78rem;padding:0.45rem 0.9rem;border-radius:4px;transition:all 0.2s}
+.nav-links a:hover{color:var(--ink);background:var(--warm)}
+.nav-cta{
+  background:var(--slate);color:#fff;
+  padding:0.55rem 1.2rem;border-radius:4px;
+  font-size:0.78rem;font-weight:600;text-decoration:none;
+  transition:opacity 0.2s;white-space:nowrap;
+}
+.nav-cta:hover{opacity:0.88}
+.nav-links a.active{color:var(--ink);background:var(--warm);font-weight:500}
+@media(max-width:900px){.nav-links{display:none}}
+
+/* ── HERO ── */
+.hero{
+  min-height:92vh;
+  display:grid;grid-template-columns:1fr 1fr;
+  position:relative;overflow:hidden;
+}
+.hero-left{
+  display:flex;flex-direction:column;justify-content:center;
+  padding:5rem 4rem 5rem 2.5rem;
+  position:relative;z-index:2;
+}
+.hero-eyebrow{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  font-size:0.68rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:1.8rem;
+}
+.hero-eyebrow::before{content:'';width:28px;height:1px;background:var(--copper)}
+.hero h1{
+  font-family:'Cormorant Garamond',serif;
+  font-size:clamp(3.2rem,5vw,5rem);
+  font-weight:500;
+  line-height:1;
+  color:var(--ink);
+  margin-bottom:1.5rem;
+  letter-spacing:-0.01em;
+}
+.hero h1 em{font-style:italic;color:var(--slate)}
+.hero-desc{
+  font-size:0.92rem;color:var(--muted);line-height:1.9;
+  max-width:420px;margin-bottom:2.5rem;font-weight:300;
+}
+
+/* NUMÉRO TRAITÉ COMME ÉLÉMENT GRAPHIQUE */
+.hero-tel-block{
+  display:flex;flex-direction:column;gap:0.6rem;margin-bottom:2rem;
+}
+.hero-tel-main{
+  display:flex;align-items:center;gap:1rem;
+  text-decoration:none;
+  padding:1rem 1.4rem;
+  border:1.5px solid var(--ink);
+  border-radius:3px;
+  transition:all 0.25s;
+  background:transparent;
+  width:fit-content;
+}
+.hero-tel-main:hover{background:var(--ink);color:#fff}
+.hero-tel-main:hover .tel-num,.hero-tel-main:hover .tel-label{color:#fff}
+.tel-num{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.6rem;font-weight:500;color:var(--ink);
+  letter-spacing:0.04em;line-height:1;
+}
+.tel-label{font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase}
+.hero-tel-urgence{
+  display:flex;align-items:center;gap:0.7rem;
+  padding:0.7rem 1rem;background:var(--slate);
+  border-radius:3px;text-decoration:none;width:fit-content;
+  transition:opacity 0.2s;
+}
+.hero-tel-urgence:hover{opacity:0.9}
+.tel-dot{width:7px;height:7px;background:#4CAF50;border-radius:50%;animation:pulse 2s infinite;flex-shrink:0}
+.hero-tel-urgence span{font-size:0.8rem;color:#fff;font-weight:500}
+@keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:0.6;transform:scale(0.9)}}
+
+.hero-badges{display:flex;gap:0.6rem;flex-wrap:wrap}
+.badge{
+  font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;
+  padding:0.3rem 0.8rem;border:1px solid var(--border);
+  border-radius:2px;color:var(--muted);background:var(--white);
+}
+
+/* HERO RIGHT — mosaïque photos */
+.hero-right{
+  position:relative;overflow:hidden;
+  background:var(--warm);
+}
+.hero-mosaic{
+  display:grid;
+  grid-template-columns:1fr 1fr;
+  grid-template-rows:1fr 1fr;
+  height:100%;gap:3px;
+}
+.mosaic-img{width:100%;height:100%;object-fit:cover;display:block}
+.mosaic-1{grid-column:1;grid-row:1/3}
+.mosaic-2{grid-column:2;grid-row:1}
+.mosaic-3{grid-column:2;grid-row:2}
+
+/* ── BANDE URGENCE ── */
+.urgence-strip{
+  background:var(--slate);
+  padding:0.85rem 2.5rem;
+  display:flex;align-items:center;justify-content:center;gap:3rem;flex-wrap:wrap;
+}
+.urgence-strip p{color:#fff;font-size:0.82rem;font-weight:400;letter-spacing:0.03em}
+.urgence-strip strong{font-weight:600}
+.urgence-strip a{
+  background:var(--copper);color:#fff;
+  padding:0.5rem 1.2rem;border-radius:3px;
+  font-size:0.78rem;font-weight:600;text-decoration:none;
+  transition:opacity 0.2s;white-space:nowrap;
+}
+.urgence-strip a:hover{opacity:0.9}
+
+/* ── STATS ── */
+.stats-section{background:var(--white);border-bottom:1px solid var(--border);padding:2.2rem 2.5rem}
+.stats-inner{max-width:900px;margin:0 auto;display:grid;grid-template-columns:repeat(4,1fr);text-align:center;gap:1rem}
+.stat{padding:0.5rem;border-right:1px solid var(--border)}
+.stat:last-child{border-right:none}
+.stat-n{font-family:'Cormorant Garamond',serif;font-size:2.4rem;font-weight:500;color:var(--slate);line-height:1}
+.stat-l{font-size:0.65rem;color:var(--muted);letter-spacing:0.1em;text-transform:uppercase;margin-top:5px}
+@media(max-width:600px){.stats-inner{grid-template-columns:1fr 1fr}}
+
+/* ── SECTIONS COMMUNES ── */
+.section-wrap{max-width:1100px;margin:0 auto;padding:5rem 2.5rem}
+.eyebrow{
+  font-size:0.65rem;letter-spacing:0.18em;text-transform:uppercase;
+  color:var(--copper);margin-bottom:0.6rem;
+  display:flex;align-items:center;gap:0.5rem;
+}
+.eyebrow::before{content:'';width:20px;height:1px;background:var(--copper)}
+.section-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2.6rem;font-weight:500;color:var(--ink);
+  line-height:1.1;margin-bottom:0.5rem;
+}
+.section-sub{font-size:0.88rem;color:var(--muted);font-weight:300;line-height:1.7}
+.rule{width:40px;height:1.5px;background:var(--copper);margin:1.2rem 0 3rem}
+
+/* ── SERVICES ── */
+.services-section{background:var(--cream);padding:5rem 0}
+.services-grid{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(170px,1fr));
+  gap:1px;
+  border:1px solid var(--border);
+  background:var(--border);
+  border-radius:6px;overflow:hidden;
+  margin-top:3rem;
+}
+.srv{
+  background:var(--white);
+  padding:1.8rem 1.4rem;
+  transition:background 0.25s;
+  position:relative;
+  overflow:hidden;
+}
+.srv::after{
+  content:'';position:absolute;bottom:0;left:0;right:0;
+  height:2px;background:var(--copper);
+  transform:scaleX(0);transform-origin:left;
+  transition:transform 0.3s;
+}
+.srv:hover{background:var(--cream)}
+.srv:hover::after{transform:scaleX(1)}
+.srv-icon{
+  width:40px;height:40px;border-radius:4px;
+  background:var(--slate-light);
+  display:flex;align-items:center;justify-content:center;
+  margin-bottom:1rem;
+}
+.srv-icon svg{width:20px;height:20px;stroke:var(--slate);stroke-width:1.5;fill:none}
+.srv-name{font-size:0.88rem;font-weight:600;color:var(--ink);margin-bottom:0.3rem;display:flex;align-items:center;gap:0.5rem;flex-wrap:wrap}
+.srv-desc{font-size:0.74rem;color:var(--muted);line-height:1.6}
+.urgence-tag{
+  font-size:0.55rem;letter-spacing:0.06em;text-transform:uppercase;
+  background:var(--slate);color:#fff;
+  padding:0.15rem 0.5rem;border-radius:2px;
+  font-weight:600;
+}
+
+/* ── RÉALISATIONS ── */
+.real-section{background:var(--warm);padding:5rem 0}
+.real-grid{
+  display:grid;
+  grid-template-columns:repeat(3,1fr);
+  grid-template-rows:auto auto;
+  gap:6px;margin-top:3rem;
+}
+.real-item{overflow:hidden;border-radius:4px;position:relative;cursor:default}
+.real-item img{width:100%;height:100%;object-fit:cover;display:block;transition:transform 0.5s}
+.real-item:hover img{transform:scale(1.04)}
+.real-item-big{grid-column:1;grid-row:1/3}
+.real-item-big img{height:500px}
+.real-item img{height:245px}
+.real-overlay{
+  position:absolute;bottom:0;left:0;right:0;
+  padding:0.8rem 1rem;
+  background:linear-gradient(transparent,rgba(28,28,28,0.7));
+  opacity:0;transition:opacity 0.3s;
+}
+.real-item:hover .real-overlay{opacity:1}
+.real-label{font-size:0.72rem;color:#fff;letter-spacing:0.08em;text-transform:uppercase;font-weight:500}
+@media(max-width:700px){
+  .real-grid{grid-template-columns:1fr 1fr}
+  .real-item-big{grid-column:1/3;grid-row:1}
+  .real-item-big img{height:220px}
+  .real-item img{height:160px}
+}
+
+/* ── HISTOIRE ── */
+.histoire-section{background:var(--white);padding:5rem 0}
+.histoire-inner{display:grid;grid-template-columns:1fr 1fr;gap:5rem;align-items:center}
+.histoire-text p{
+  font-size:0.9rem;color:var(--muted);line-height:2;
+  margin-bottom:1rem;font-weight:300;
+}
+.histoire-text p strong{color:var(--ink);font-weight:500}
+.famille-card{
+  background:var(--slate-light);border-left:3px solid var(--slate);
+  padding:1.2rem 1.4rem;border-radius:0 5px 5px 0;
+  margin-top:1.5rem;
+}
+.famille-card p{font-size:0.82rem;color:var(--slate);line-height:1.7;margin-bottom:0}
+.famille-card strong{font-weight:600}
+.syndics-block{
+  background:var(--warm);border:1px solid var(--border);
+  border-radius:5px;padding:1.2rem;margin-top:1.2rem;
+}
+.syndics-label{font-size:0.62rem;letter-spacing:0.12em;text-transform:uppercase;color:var(--muted);margin-bottom:0.6rem}
+.syndics-tags{display:flex;flex-wrap:wrap;gap:0.4rem}
+.syn-tag{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:2px;padding:0.2rem 0.6rem;
+  font-size:0.68rem;color:var(--ink);font-weight:500;letter-spacing:0.04em;
+}
+.histoire-visual{display:flex;flex-direction:column;gap:6px}
+.histoire-photo{width:100%;object-fit:cover;border-radius:4px;display:block}
+@media(max-width:768px){.histoire-inner{grid-template-columns:1fr}}
+
+/* ── INTERVENTIONS ── */
+.dep-section{background:var(--ink);padding:5rem 0}
+.dep-section .eyebrow::before{background:var(--copper)}
+.dep-section .eyebrow{color:var(--copper)}
+.dep-section .section-title{color:#fff}
+.dep-section .rule{background:var(--copper)}
+.dep-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:1px;background:rgba(255,255,255,0.05);
+  border:1px solid rgba(255,255,255,0.05);
+  border-radius:5px;overflow:hidden;margin-top:3rem;
+}
+.dep-card{
+  background:rgba(255,255,255,0.03);
+  padding:2rem;transition:background 0.25s;
+}
+.dep-card:hover{background:rgba(255,255,255,0.06)}
+.dep-card-icon{
+  font-family:'Cormorant Garamond',serif;
+  font-size:2rem;font-weight:400;color:var(--copper);
+  margin-bottom:0.8rem;line-height:1;
+}
+.dep-card h3{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.25rem;font-weight:500;color:#fff;
+  margin-bottom:0.8rem;
+}
+.dep-card p{font-size:0.82rem;color:rgba(255,255,255,0.45);line-height:1.85;font-weight:300}
+.dep-cta{
+  display:inline-flex;align-items:center;gap:0.5rem;
+  margin-top:1.2rem;
+  background:var(--copper);color:#fff;
+  padding:0.55rem 1.1rem;border-radius:3px;
+  font-size:0.76rem;font-weight:600;text-decoration:none;
+  transition:opacity 0.2s;
+}
+.dep-cta:hover{opacity:0.9}
+@media(max-width:700px){.dep-grid{grid-template-columns:1fr}}
+
+/* ── AVIS ── */
+.avis-section{background:var(--cream);padding:5rem 0}
+.avis-header{display:flex;align-items:flex-end;justify-content:space-between;flex-wrap:wrap;gap:1rem;margin-bottom:3rem}
+.note-block{
+  display:flex;align-items:center;gap:1rem;
+  background:var(--white);border:1px solid var(--border);
+  border-radius:5px;padding:1rem 1.4rem;
+}
+.note-big{
+  font-family:'Cormorant Garamond',serif;
+  font-size:3.2rem;font-weight:500;color:var(--slate);line-height:1;
+}
+.note-stars{color:var(--copper);font-size:1rem;letter-spacing:2px}
+.note-label{font-size:0.7rem;color:var(--muted);margin-top:2px}
+.avis-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:1.2rem}
+.avis-card{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:5px;padding:1.5rem;transition:all 0.3s;
+  position:relative;
+}
+.avis-card:hover{border-color:var(--slate);transform:translateY(-2px);box-shadow:0 8px 24px rgba(44,95,122,0.08)}
+.avis-stars-row{color:var(--copper);font-size:0.85rem;letter-spacing:2px;margin-bottom:0.9rem}
+.avis-card blockquote{
+  font-family:'Cormorant Garamond',serif;
+  font-size:0.98rem;font-style:italic;color:var(--muted);
+  line-height:1.8;margin-bottom:1.2rem;
+}
+.avis-footer{display:flex;align-items:center;gap:0.7rem}
+.avis-initials{
+  width:32px;height:32px;border-radius:50%;
+  background:var(--slate-light);
+  display:flex;align-items:center;justify-content:center;
+  font-size:0.68rem;font-weight:600;color:var(--slate);flex-shrink:0;
+}
+.avis-name{font-size:0.78rem;font-weight:600;color:var(--ink)}
+.avis-loc{font-size:0.66rem;color:var(--muted)}
+@media(max-width:768px){.avis-grid{grid-template-columns:1fr}}
+
+/* ── ZONE ── */
+.zone-section{background:var(--warm);padding:5rem 0}
+.zone-grid{display:grid;grid-template-columns:1fr 1fr;gap:4rem;align-items:start;margin-top:3rem}
+.zone-list{display:flex;flex-direction:column;gap:1rem}
+.zone-item{
+  background:var(--white);border:1px solid var(--border);
+  border-radius:5px;padding:1.2rem 1.4rem;transition:all 0.25s;
+}
+.zone-item:hover{border-color:var(--slate)}
+.zone-item-head{display:flex;align-items:center;justify-content:space-between;margin-bottom:0.6rem}
+.zone-item-title{font-size:0.85rem;font-weight:600;color:var(--ink)}
+.zone-badge{
+  font-size:0.6rem;font-weight:600;letter-spacing:0.06em;text-transform:uppercase;
+  padding:0.15rem 0.55rem;border-radius:2px;
+  background:var(--slate-light);color:var(--slate);
+}
+.zone-tags{display:flex;flex-wrap:wrap;gap:0.35rem}
+.zone-tag{
+  background:var(--warm);border:1px solid var(--border);
+  border-radius:2px;padding:0.18rem 0.6rem;
+  font-size:0.68rem;color:var(--muted);transition:all 0.2s;
+}
+.zone-tag:hover{background:var(--slate);color:#fff;border-color:var(--slate)}
+.map-placeholder{
+  background:var(--slate-light);border:1px solid var(--border);
+  border-radius:5px;aspect-ratio:4/3;position:relative;
+  display:flex;flex-direction:column;align-items:center;justify-content:center;gap:0.8rem;
+}
+.map-placeholder svg{opacity:0.3;color:var(--slate)}
+.map-placeholder p{font-size:0.75rem;color:var(--muted);text-align:center;max-width:160px;line-height:1.5}
+.map-link{
+  position:absolute;bottom:1rem;left:50%;transform:translateX(-50%);
+  background:var(--slate);color:#fff;
+  padding:0.55rem 1.1rem;border-radius:3px;
+  font-size:0.76rem;font-weight:600;text-decoration:none;
+  white-space:nowrap;transition:opacity 0.2s;
+}
+.map-link:hover{opacity:0.9}
+@media(max-width:768px){.zone-grid{grid-template-columns:1fr}}
+
+/* ── CONTACT ── */
+.contact-section{background:var(--ink);padding:5rem 0}
+.contact-section .eyebrow{color:var(--copper)}
+.contact-section .eyebrow::before{background:var(--copper)}
+.contact-section .section-title{color:#fff}
+.contact-section .rule{background:var(--copper)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:3.5rem;margin-top:3rem}
+.contact-infos{display:flex;flex-direction:column;gap:0.8rem}
+.c-row{
+  display:flex;align-items:center;gap:1rem;
+  padding:1rem 1.2rem;border-radius:4px;
+  text-decoration:none;transition:all 0.2s;
+}
+.c-row-solid{background:var(--copper);color:#fff}
+.c-row-solid:hover{opacity:0.9}
+.c-row-ghost{
+  border:1px solid rgba(255,255,255,0.1);
+  color:rgba(255,255,255,0.6);
+}
+.c-row-ghost:hover{border-color:rgba(255,255,255,0.3);color:#fff}
+.c-row-icon{font-size:1.1rem;flex-shrink:0}
+.c-row-label{font-size:0.63rem;letter-spacing:0.08em;text-transform:uppercase;color:rgba(255,255,255,0.4);display:block}
+.c-row-val{font-size:0.9rem;font-weight:600;display:block;color:inherit}
+.c-row-solid .c-row-label{color:rgba(255,255,255,0.65)}
+.contact-form-box{
+  background:rgba(255,255,255,0.04);
+  border:1px solid rgba(255,255,255,0.07);
+  border-radius:5px;padding:2rem;
+}
+.form-title{
+  font-family:'Cormorant Garamond',serif;
+  font-size:1.3rem;font-weight:500;color:#fff;
+  margin-bottom:1.5rem;
+}
+.form-row{display:grid;grid-template-columns:1fr 1fr;gap:0.8rem;margin-bottom:0.8rem}
+.form-group{display:flex;flex-direction:column;gap:0.35rem;margin-bottom:0.8rem}
+.form-group label{font-size:0.68rem;letter-spacing:0.06em;text-transform:uppercase;color:rgba(255,255,255,0.35)}
+.form-group input,.form-group select,.form-group textarea{
+  background:rgba(255,255,255,0.06);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:4px;
+  padding:0.7rem 0.9rem;
+  font-size:0.84rem;font-family:'Inter',sans-serif;
+  color:#fff;outline:none;transition:border-color 0.2s;
+}
+.form-group input::placeholder,.form-group textarea::placeholder{color:rgba(255,255,255,0.2)}
+.form-group select option{background:var(--ink);color:#fff}
+.form-group input:focus,.form-group select:focus,.form-group textarea:focus{border-color:var(--copper)}
+.form-group textarea{min-height:85px;resize:vertical}
+.form-submit{
+  width:100%;background:var(--copper);color:#fff;border:none;
+  padding:0.9rem;border-radius:4px;font-size:0.88rem;font-weight:600;
+  cursor:pointer;transition:opacity 0.2s;font-family:'Inter',sans-serif;
+}
+.form-submit:hover{opacity:0.9}
+.form-success{
+  display:none;background:rgba(76,175,80,0.1);
+  border:1px solid rgba(76,175,80,0.3);
+  border-radius:4px;padding:0.8rem;font-size:0.82rem;
+  color:#4CAF50;text-align:center;margin-top:0.8rem;
+}
+@media(max-width:768px){.contact-grid,.form-row{grid-template-columns:1fr}}
+
+/* ── FOOTER ── */
+footer{background:#111;padding:2rem 2.5rem}
+.footer-inner{
+  max-width:1100px;margin:0 auto;
+  display:flex;justify-content:space-between;align-items:center;
+  flex-wrap:wrap;gap:1rem;
+}
+footer p{font-size:0.72rem;color:rgba(255,255,255,0.2)}
+footer span{color:rgba(255,255,255,0.5)}
+.footer-links{display:flex;gap:1.5rem}
+.footer-links a{color:rgba(255,255,255,0.2);font-size:0.7rem;text-decoration:none;transition:color 0.2s}
+.footer-links a:hover{color:rgba(255,255,255,0.5)}
+
+/* ── ANIMATIONS ── */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal.in{opacity:1;transform:none}
+.reveal-l{opacity:0;transform:translateX(-20px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal-l.in{opacity:1;transform:none}
+.reveal-r{opacity:0;transform:translateX(20px);transition:opacity 0.7s ease,transform 0.7s ease}
+.reveal-r.in{opacity:1;transform:none}
+
+/* ── RESPONSIVE HERO ── */
+@media(max-width:900px){
+  .hero{grid-template-columns:1fr;min-height:auto}
+  .hero-right{height:55vw;min-height:280px}
+  .hero-left{padding:4rem 1.5rem 3rem}
+}
+</style>
+</head>
+<body>
+
+<!-- BARRE SCROLL PROGRESSION -->
+<div class="scroll-bar" id="scroll-bar"></div>
+
+<!-- MOBILE CALL BAR -->
+<div class="call-bar">
+  <a href="tel:0631455203" class="call-bar-main">📞 06 31 45 52 03</a>
+  <a href="tel:0631455203" class="call-bar-urgence">Urgence</a>
+</div>
+
+<!-- NAV -->
+<nav>
+  <a class="nav-logo" href="#">
+    <div class="nav-logo-mark">
+      <svg viewBox="0 0 24 24" fill="none" stroke="#85C1E9" stroke-width="1.5" stroke-linecap="round">
+        <path d="M12 2C12 2 6 10 6 15a6 6 0 0012 0C18 10 12 2 12 2z"/>
+        <path d="M9 16a3 3 0 006 0" stroke="rgba(255,255,255,0.4)"/>
+      </svg>
+    </div>
+    <div class="nav-logo-text">
+      <span class="nav-logo-name">JHP Plombier</span>
+      <span class="nav-logo-sub">Artisan Paris 5e · depuis 2014</span>
+    </div>
+  </a>
+  <ul class="nav-links">
+    <li><a href="#services">Services</a></li>
+    <li><a href="#realisations">Réalisations</a></li>
+    <li><a href="#histoire">Notre histoire</a></li>
+    <li><a href="#avis">Avis</a></li>
+    <li><a href="#zone">Zone</a></li>
+    <li><a href="#contact">Contact</a></li>
+  </ul>
+  <a href="tel:0631455203" class="nav-cta">📞 Appeler</a>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-left">
+    <div class="hero-eyebrow">Artisan indépendant · Paris 5e · Depuis 2014</div>
+    <h1>Plombier<br>de <em>confiance</em><br>à Paris</h1>
+    <p class="hero-desc">Dépannage, installation et rénovation complète — un seul artisan, une vraie relation de confiance. John intervient personnellement sur chaque chantier depuis plus de 17 ans.</p>
+
+    <div class="hero-tel-block">
+      <a href="tel:0631455203" class="hero-tel-main">
+        <div>
+          <span class="tel-num">06 31 45 52 03</span>
+          <span class="tel-label">Ligne directe de John</span>
+        </div>
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"><path d="M5 12h14M12 5l7 7-7 7"/></svg>
+      </a>
+      <a href="tel:0631455203" class="hero-tel-urgence">
+        <span class="tel-dot"></span>
+        <span>Disponible · Devis gratuit sur place</span>
+      </a>
+    </div>
+
+    <div class="hero-badges">
+      <span class="badge">Partenaire Horus France</span>
+      <span class="badge">17 ans d'expérience</span>
+      <span class="badge">Devis gratuit</span>
+    </div>
+  </div>
+
+  <div class="hero-right">
+    <div class="hero-mosaic">
+      <img class="mosaic-img mosaic-1" src="iiiiii.jpg" alt="Robinetterie Horus France posée par JHP">
+      <img class="mosaic-img mosaic-2" src="ggggggg.jpg" alt="Douche rénovée par JHP Plombier">
+      <img class="mosaic-img mosaic-3" src="sssss.jpg" alt="Salle de bain rénovée par JHP Plombier">
+    </div>
+  </div>
+</section>
+
+<!-- URGENCE STRIP -->
+<div class="urgence-strip">
+  <p>🚨 <strong>Fuite d'eau ou canalisation bouchée ?</strong> John intervient rapidement dans le 5e et les arrondissements voisins</p>
+  <a href="tel:0631455203">📱 Appeler maintenant</a>
+</div>
+
+<!-- STATS -->
+<div class="stats-section">
+  <div class="stats-inner reveal">
+    <div class="stat"><div class="stat-n">17+</div><div class="stat-l">Ans d'expérience</div></div>
+    <div class="stat"><div class="stat-n">Paris</div><div class="stat-l">5e & alentours</div></div>
+    <div class="stat"><div class="stat-n">à vélo</div><div class="stat-l">Intervention rapide</div></div>
+    <div class="stat"><div class="stat-n">Devis</div><div class="stat-l">Gratuit sur place</div></div>
+  </div>
+</div>
+
+<!-- SERVICES -->
+<section class="services-section" id="services">
+  <div class="section-wrap" style="padding-bottom:0">
+    <div class="eyebrow reveal">Ce qu'on fait</div>
+    <h2 class="section-title reveal">Nos services</h2>
+    <p class="section-sub reveal">Du dépannage d'urgence à la rénovation complète — un seul numéro</p>
+    <div class="rule reveal"></div>
+  </div>
+  <div class="section-wrap" style="padding-top:0">
+    <div class="services-grid">
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M12 2C8 8 6 12 6 16a6 6 0 0012 0C18 12 16 8 12 2z"/></svg></div>
+        <div class="srv-name">Fuite d'eau <span class="urgence-tag">Urgent</span></div>
+        <p class="srv-desc">Fermeture robinet d'arrêt, réparation joint, diagnostic complet de l'installation</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M5 12h14M12 5l7 7-7 7"/></svg></div>
+        <div class="srv-name">Robinetterie</div>
+        <p class="srv-desc">Réparation et remplacement mitigeurs, robinets. Partenaire Horus France et GROHE</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><rect x="3" y="8" width="18" height="12" rx="2"/><path d="M7 8V5a2 2 0 014 0v3M13 8V5a2 2 0 014 0v3"/></svg></div>
+        <div class="srv-name">Sanitaire</div>
+        <p class="srv-desc">Lavabo, WC, évier, vasque, baignoire, douche — pose et remplacement complets</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M12 2v4M12 18v4M4.93 4.93l2.83 2.83M16.24 16.24l2.83 2.83M2 12h4M18 12h4M4.93 19.07l2.83-2.83M16.24 7.76l2.83-2.83"/></svg></div>
+        <div class="srv-name">Ballon eau chaude</div>
+        <p class="srv-desc">Installation, entretien et remplacement. Thermor, Atlantic, Ariston, Chaffoteaux</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><path d="M12 2v3M12 19v3M4.22 4.22l2.12 2.12M17.66 17.66l2.12 2.12M2 12h3M19 12h3M4.22 19.78l2.12-2.12M17.66 6.34l2.12-2.12"/></svg></div>
+        <div class="srv-name">Dégorgement <span class="urgence-tag">Urgent</span></div>
+        <p class="srv-desc">Lavabo, douche, évier, colonne d'immeuble — particuliers, restaurants, syndics</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M21 16V8a2 2 0 00-1-1.73l-7-4a2 2 0 00-2 0l-7 4A2 2 0 003 8v8a2 2 0 001 1.73l7 4a2 2 0 002 0l7-4A2 2 0 0021 16z"/></svg></div>
+        <div class="srv-name">Chaudière</div>
+        <p class="srv-desc">Dépannage et entretien annuel. ELM Leblanc, Frisquet, Saunier Duval, Chaffoteaux</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg></div>
+        <div class="srv-name">Broyeur</div>
+        <p class="srv-desc">Installation, remplacement et dépannage de toilettes broyeur SFA, Saniflo</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M3 9l9-7 9 7v11a2 2 0 01-2 2H5a2 2 0 01-2-2z"/><path d="M9 22V12h6v10"/></svg></div>
+        <div class="srv-name">Rénovation salle de bain</div>
+        <p class="srv-desc">Projet complet clé en main — de la démolition à la pose carrelage et finitions</p>
+      </div>
+      <div class="srv reveal">
+        <div class="srv-icon"><svg viewBox="0 0 24 24"><path d="M14.7 6.3a1 1 0 000 1.4l1.6 1.6a1 1 0 001.4 0l3.77-3.77a6 6 0 01-7.94 7.94l-6.91 6.91a2.12 2.12 0 01-3-3l6.91-6.91a6 6 0 017.94-7.94l-3.76 3.76z"/></svg></div>
+        <div class="srv-name">Rénovation cuisine</div>
+        <p class="srv-desc">Déplacement d'arrivées, pose d'évier, lave-vaisselle, plomberie cuisine complète</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RÉALISATIONS -->
+<section class="real-section" id="realisations">
+  <div class="section-wrap" style="padding-bottom:0">
+    <div class="eyebrow reveal">Nos chantiers</div>
+    <h2 class="section-title reveal">Réalisations récentes</h2>
+    <p class="section-sub reveal">Chaque projet est réalisé par John lui-même, avec soin et précision</p>
+    <div class="rule reveal"></div>
+  </div>
+  <div class="section-wrap" style="padding-top:0">
+    <div class="real-grid">
+      <div class="real-item real-item-big reveal-l">
+        <img src="kkkk.jpg" alt="Cabine de douche haut de gamme posée par JHP Paris">
+        <div class="real-overlay"><span class="real-label">Douche complète</span></div>
+      </div>
+      <div class="real-item reveal">
+        <img src="fffff.jpg" alt="WC suspendu installation Paris">
+        <div class="real-overlay"><span class="real-label">WC Roca suspendu</span></div>
+      </div>
+      <div class="real-item reveal">
+        <img src="ggggg.jpg" alt="Cabine de douche installation Paris">
+        <div class="real-overlay"><span class="real-label">Cabine de douche</span></div>
+      </div>
+      <div class="real-item reveal">
+        <img src="jjjj.jpg" alt="Douche avec carrelage brun Paris">
+        <div class="real-overlay"><span class="real-label">Rénovation douche</span></div>
+      </div>
+      <div class="real-item reveal">
+        <img src="jj.jpg" alt="WC et lave-main carrelage Zellige Paris">
+        <div class="real-overlay"><span class="real-label">WC & lave-main</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- HISTOIRE -->
+<section class="histoire-section" id="histoire">
+  <div class="section-wrap">
+    <div class="histoire-inner">
+      <div class="histoire-text reveal-l">
+        <div class="eyebrow">Notre histoire</div>
+        <h2 class="section-title">Une <em style="font-style:italic;color:var(--slate)">passion</em><br>depuis 17 ans</h2>
+        <div class="rule"></div>
+        <p>J'ai démarré dans la plomberie il y a plus de <strong>17 ans</strong>, avec une conviction simple : chaque client mérite un artisan qui s'implique vraiment. Pas de sous-traitance, pas de surprises sur la facture — je viens moi-même, je répare moi-même.</p>
+        <p>Installé <strong>122 rue Mouffetard (Paris 5e) depuis 2014</strong>, j'interviens à vélo dans tout le quartier. Mon engagement : vous rappeler rapidement, être là quand vous avez besoin, laisser les lieux propres.</p>
+        <p>La satisfaction de mes clients est ma meilleure publicité. Beaucoup me font confiance depuis des années, et me recommandent à leurs voisins.</p>
+        <div class="famille-card">
+          <p><strong>John Hughes</strong> — artisan plombier indépendant, 122 rue Mouffetard 75005 Paris. Société immatriculée depuis 1995.</p>
+        </div>
+        <div class="syndics-block">
+          <div class="syndics-label">Fait confiance à JHP</div>
+          <div class="syndics-tags">
+            <span class="syn-tag">Particuliers</span>
+            <span class="syn-tag">Syndics de copropriété</span>
+            <span class="syn-tag">Restaurateurs</span>
+            <span class="syn-tag">Gestionnaires locatifs</span>
+          </div>
+        </div>
+      </div>
+      <div class="histoire-visual reveal-r">
+        <img class="histoire-photo" src="ggggggg.jpg" alt="Réalisation JHP - Douche posée" style="height:300px">
+        <img class="histoire-photo" src="sssss.jpg" alt="Réalisation JHP - Salle de bain" style="height:200px;margin-top:6px">
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- INTERVENTIONS DÉTAILLÉES -->
+<section class="dep-section" id="depannage">
+  <div class="section-wrap">
+    <div class="eyebrow reveal">En détail</div>
+    <h2 class="section-title reveal">Avant d'appeler,<br>ce qu'il faut savoir</h2>
+    <div class="rule reveal"></div>
+    <div class="dep-grid">
+      <div class="dep-card reveal-l">
+        <div class="dep-card-icon">01</div>
+        <h3>Fuite d'eau</h3>
+        <p>Pas de panique. Fermez d'abord le robinet d'arrêt le plus proche (sous l'évier, derrière les WC). La plupart des fuites viennent d'un joint usé ou d'un raccord mal serré — intervention souvent rapide. John évalue toute votre installation lors du passage.</p>
+        <a href="tel:0631455203" class="dep-cta">📞 Appeler maintenant</a>
+      </div>
+      <div class="dep-card reveal-r">
+        <div class="dep-card-icon">02</div>
+        <h3>Dégorgement</h3>
+        <p>Lavabo, évier, douche, baignoire ou colonne d'immeuble bouchés — un seul numéro. John intervient chez les particuliers comme pour les restaurants, sociétés et syndics. Efficacité garantie dans les meilleurs délais, prix annoncé avant intervention.</p>
+        <a href="tel:0631455203" class="dep-cta">📞 Appeler maintenant</a>
+      </div>
+      <div class="dep-card reveal-l">
+        <div class="dep-card-icon">03</div>
+        <h3>Ballon d'eau chaude</h3>
+        <p>Votre ballon doit être entretenu tous les 3 ans : vidange, détartrage, remplacement de la résistance. Le calcaire parisien est particulièrement agressif. John pose et dépanne Thermor, Pacific, Atlantic, Chaffoteaux et Maury, Ariston.</p>
+        <a href="tel:0631455203" class="dep-cta">📞 Devis gratuit</a>
+      </div>
+      <div class="dep-card reveal-r">
+        <div class="dep-card-icon">04</div>
+        <h3>Chaudière</h3>
+        <p>N'attendez pas l'hiver pour tomber en panne. Une révision annuelle évite 80% des pannes. John dépanne et entretient ELM Leblanc, Frisquet, Chaffoteaux et Maury, Saunier Duval. Contrat entretien disponible avec 2 passages par an.</p>
+        <a href="tel:0631455203" class="dep-cta">📞 Prendre RDV</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- AVIS -->
+<section class="avis-section" id="avis">
+  <div class="section-wrap">
+    <div class="avis-header">
+      <div>
+        <div class="eyebrow reveal">Témoignages</div>
+        <h2 class="section-title reveal">Ce que disent<br>nos clients</h2>
+        <p class="section-sub reveal">Des retours authentiques, dans le 5e et les arrondissements voisins</p>
+        <div class="rule reveal"></div>
+      </div>
+      <div class="note-block reveal">
+        <div class="note-big">4.8</div>
+        <div>
+          <div class="note-stars">★★★★★</div>
+          <div class="note-label">Note Google · Paris 5e</div>
+        </div>
+      </div>
+    </div>
+    <div class="avis-grid">
+      <div class="avis-card reveal">
+        <div class="avis-stars-row">★★★★★</div>
+        <blockquote>"Devis fourni rapidement et respecté. Rapidité du travail, sans laisser le chantier en attente. Conseils et compétence, propreté des lieux respectée — et beaucoup de conscience professionnelle."</blockquote>
+        <div class="avis-footer">
+          <div class="avis-initials">ML</div>
+          <div>
+            <div class="avis-name">Marie-Laure D.</div>
+            <div class="avis-loc">Paris 5e · Client fidèle</div>
+          </div>
+        </div>
+      </div>
+      <div class="avis-card reveal">
+        <div class="avis-stars-row">★★★★★</div>
+        <blockquote>"Difficile de trouver un BON plombier conscientieux et efficace. John est les deux. Intervention pour un dégât des eaux, réglée rapidement avec un vrai suivi. Les prix correspondent à la qualité."</blockquote>
+        <div class="avis-footer">
+          <div class="avis-initials">PB</div>
+          <div>
+            <div class="avis-name">Pierre B.</div>
+            <div class="avis-loc">Quartier Mouffetard</div>
+          </div>
+        </div>
+      </div>
+      <div class="avis-card reveal">
+        <div class="avis-stars-row">★★★★★</div>
+        <blockquote>"Rénovation complète de ma salle de bain dans un appartement parisien aux contraintes compliquées. Travail soigné, respectueux du logement et des délais. Je recommande sans réserve."</blockquote>
+        <div class="avis-footer">
+          <div class="avis-initials">SC</div>
+          <div>
+            <div class="avis-name">Sophie C.</div>
+            <div class="avis-loc">Paris 5e · Rénovation</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ZONE D'INTERVENTION -->
+<section class="zone-section" id="zone">
+  <div class="section-wrap">
+    <div class="eyebrow reveal">Où on intervient</div>
+    <h2 class="section-title reveal">Zone d'intervention</h2>
+    <p class="section-sub reveal">À vélo dans le 5e, à pied dans les arrondissements voisins — interventions rapides garanties</p>
+    <div class="rule reveal"></div>
+    <div class="zone-grid">
+      <div class="map-placeholder reveal-l">
+        <svg width="56" height="56" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" color="#2C5F7A">
+          <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7z"/>
+          <circle cx="12" cy="9" r="2.5"/>
+        </svg>
+        <p>122 Rue Mouffetard<br>75005 Paris</p>
+        <a href="https://maps.google.com/?q=122+Rue+Mouffetard+75005+Paris" target="_blank" class="map-link">📍 Voir sur Google Maps</a>
+      </div>
+      <div class="zone-list reveal-r">
+        <div class="zone-item">
+          <div class="zone-item-head">
+            <span class="zone-item-title">Paris 5e — Notre quartier</span>
+            <span class="zone-badge">Prioritaire</span>
+          </div>
+          <div class="zone-tags">
+            <span class="zone-tag">Mouffetard</span>
+            <span class="zone-tag">Maubert</span>
+            <span class="zone-tag">Panthéon</span>
+            <span class="zone-tag">Jussieu</span>
+            <span class="zone-tag">Censier</span>
+            <span class="zone-tag">Odéon</span>
+            <span class="zone-tag">Contrescarpe</span>
+          </div>
+        </div>
+        <div class="zone-item">
+          <div class="zone-item-head">
+            <span class="zone-item-title">Arrondissements voisins</span>
+            <span class="zone-badge">Régulier</span>
+          </div>
+          <div class="zone-tags">
+            <span class="zone-tag">Paris 4e</span>
+            <span class="zone-tag">Paris 6e</span>
+            <span class="zone-tag">Paris 13e</span>
+            <span class="zone-tag">Paris 7e</span>
+            <span class="zone-tag">Paris 1er</span>
+          </div>
+        </div>
+        <div class="zone-item">
+          <div class="zone-item-head">
+            <span class="zone-item-title">Plus largement</span>
+            <span class="zone-badge">Sur demande</span>
+          </div>
+          <div class="zone-tags">
+            <span class="zone-tag">Tout Paris</span>
+            <span class="zone-tag">Proche banlieue</span>
+            <span class="zone-tag">Île-de-France</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact-section" id="contact">
+  <div class="section-wrap">
+    <div class="eyebrow reveal">Nous contacter</div>
+    <h2 class="section-title reveal">Devis gratuit & contact</h2>
+    <p class="section-sub reveal" style="color:rgba(255,255,255,0.4)">John répond personnellement et intervient rapidement</p>
+    <div class="rule reveal"></div>
+    <div class="contact-grid">
+      <div class="contact-infos">
+        <a href="tel:0631455203" class="c-row c-row-solid">
+          <span class="c-row-icon">📞</span>
+          <div><span class="c-row-label">Ligne directe</span><span class="c-row-val">06 31 45 52 03</span></div>
+        </a>
+        <a href="mailto:jhp.plomberie@gmail.com" class="c-row c-row-ghost">
+          <span class="c-row-icon">✉️</span>
+          <div><span class="c-row-label">Email</span><span class="c-row-val">jhp.plomberie@gmail.com</span></div>
+        </a>
+        <div class="c-row c-row-ghost" style="cursor:default">
+          <span class="c-row-icon">📍</span>
+          <div><span class="c-row-label">Adresse</span><span class="c-row-val">122 rue Mouffetard, 75005 Paris</span></div>
+        </div>
+        <div class="c-row c-row-ghost" style="cursor:default">
+          <span class="c-row-icon">🕐</span>
+          <div><span class="c-row-label">Horaires</span><span class="c-row-val">Lun–Sam 8h–18h</span></div>
+        </div>
+        <div class="c-row c-row-ghost" style="cursor:default">
+          <span class="c-row-icon">🗺️</span>
+          <div><span class="c-row-label">Zone</span><span class="c-row-val">Paris 5e & arrondissements voisins</span></div>
+        </div>
+      </div>
+      <div class="contact-form-box">
+        <div class="form-title">Demande de devis gratuit</div>
+        <form id="jhp-form" action="https://formspree.io/f/jhp-plomberie" method="POST">
+          <div class="form-row">
+            <div class="form-group"><label>Prénom *</label><input type="text" name="prenom" placeholder="Votre prénom" required></div>
+            <div class="form-group"><label>Nom *</label><input type="text" name="nom" placeholder="Votre nom" required></div>
+          </div>
+          <div class="form-row">
+            <div class="form-group"><label>Téléphone *</label><input type="tel" name="telephone" placeholder="06 XX XX XX XX" required></div>
+            <div class="form-group"><label>Email</label><input type="email" name="email" placeholder="votre@email.fr"></div>
+          </div>
+          <div class="form-group">
+            <label>Type d'intervention *</label>
+            <select name="type" required>
+              <option value="">Choisissez...</option>
+              <option>Fuite d'eau (urgence)</option>
+              <option>Dégorgement (urgence)</option>
+              <option>Robinetterie</option>
+              <option>Sanitaire</option>
+              <option>Ballon d'eau chaude</option>
+              <option>Chaudière</option>
+              <option>Broyeur</option>
+              <option>Rénovation salle de bain</option>
+              <option>Rénovation cuisine</option>
+              <option>Autre</option>
+            </select>
+          </div>
+          <div class="form-group"><label>Adresse du chantier</label><input type="text" name="adresse" placeholder="Adresse complète, Paris"></div>
+          <div class="form-group"><label>Description *</label><textarea name="message" placeholder="Décrivez votre problème ou projet..." required></textarea></div>
+          <button type="submit" class="form-submit">Envoyer ma demande →</button>
+          <div class="form-success" id="form-ok">✅ Bien reçu ! John vous rappelle rapidement.</div>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-inner">
+    <p><span>JHP Plombier</span> · 122 rue Mouffetard, 75005 Paris</p>
+    <div class="footer-links">
+      <a href="#services">Services</a>
+      <a href="#realisations">Réalisations</a>
+      <a href="#avis">Avis</a>
+      <a href="#contact">Contact</a>
+    </div>
+    <p>SIRET 402 927 685 00022</p>
+  </div>
+</footer>
+
+<script>
+// Reveal animations
+const obs = new IntersectionObserver((entries) => {
+  entries.forEach((e, i) => {
+    if (e.isIntersecting) setTimeout(() => e.target.classList.add('in'), i * 55);
+  });
+}, {threshold: 0.07});
+document.querySelectorAll('.reveal,.reveal-l,.reveal-r').forEach(el => obs.observe(el));
+
+// Barre de progression scroll
+const bar = document.getElementById('scroll-bar');
+window.addEventListener('scroll', () => {
+  const pct = window.scrollY / (document.body.scrollHeight - window.innerHeight) * 100;
+  bar.style.width = Math.min(pct, 100) + '%';
+}, {passive: true});
+
+// Nav active au scroll
+const sections = document.querySelectorAll('section[id], div[id]');
+const navLinks = document.querySelectorAll('.nav-links a');
+const observer2 = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      navLinks.forEach(a => a.classList.remove('active'));
+      const active = document.querySelector(`.nav-links a[href="#${e.target.id}"]`);
+      if (active) active.classList.add('active');
+    }
+  });
+}, {threshold: 0.4});
+sections.forEach(s => observer2.observe(s));
+
+// Formulaire
+const form = document.getElementById('jhp-form');
+if (form) {
+  form.addEventListener('submit', async (e) => {
+    e.preventDefault();
+    const btn = form.querySelector('.form-submit');
+    btn.textContent = 'Envoi...'; btn.disabled = true;
+    try {
+      const r = await fetch(form.action, {method:'POST', body: new FormData(form), headers:{Accept:'application/json'}});
+      if (r.ok) { document.getElementById('form-ok').style.display='block'; form.reset(); btn.textContent='Envoyé !'; }
+      else { btn.textContent='Réessayer'; btn.disabled=false; }
+    } catch { btn.textContent='Réessayer'; btn.disabled=false; }
+  });
+}
+</script>
+</body>
+</html>
